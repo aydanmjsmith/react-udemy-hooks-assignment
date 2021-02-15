@@ -12,15 +12,21 @@ function Ingredients() {
   };
 
   const removeIngredientHandler = (ingredientId) => {
-    const updIngredientList = ingredientList
+    //const updIngredientList = ingredientList
+    //  .filter( ingredient => {
+    //    if (ingredient.id === ingredientId) {
+    //      return false;
+    //    }
+    //    return true;
+    //  });
+
+    setIngredientList(prevIngredientList => prevIngredientList
       .filter( ingredient => {
         if (ingredient.id === ingredientId) {
           return false;
         }
         return true;
-      });
-
-    setIngredientList(updIngredientList);
+      }));
   }
 
   return (
