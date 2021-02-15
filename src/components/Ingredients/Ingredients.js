@@ -11,6 +11,18 @@ function Ingredients() {
     setIngredientList([...ingredientList, { id:Math.random(), ...ingredient }]);
   };
 
+  const removeIngredientHandler = (ingredientId) => {
+    const updIngredientList = ingredientList
+      .filter( ingredient => {
+        if (ingredient.id === ingredientId) {
+          return false;
+        }
+        return true;
+      });
+
+    setIngredientList(updIngredientList);
+  }
+
   return (
     <div className="App">
       <IngredientForm onAddItem={addIngredientHandler}/>
